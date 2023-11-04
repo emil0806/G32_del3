@@ -16,4 +16,4 @@ Frederik <br />
 
 ## Description
 
-It is a fun game.
+A classic game for all ages.
