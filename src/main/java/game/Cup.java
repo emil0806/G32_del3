@@ -2,11 +2,10 @@ package game;
 
     public class Cup {
 
-        // Creates two dice in a cup
+        // Creates one die in a cup
         private Die die1 = new Die();
-        private Die die2 = new Die();
     
-        // Control the current roll sum
+        // Controls the current roll sum
         private int currentRollSum;
     
         // Cup constructor
@@ -14,25 +13,20 @@ package game;
             this.currentRollSum = 0;
         }
     
-        // Rolls each die and sets the sum
+        // Rolls the die and gets the sum
         public void setRollSum() {
             die1.setDieValue();
-            die2.setDieValue();
-            this.currentRollSum = die1.getDieValue() + die2.getDieValue();
+            this.currentRollSum = die1.getDieValue();
         }
     
         // Gets roll sum
         public int getRollSum() {
             return this.currentRollSum;
         }
-    
-        // Get value of die 1
+
+        // Gets value of the die
         public int getDie1() {
             return die1.getDieValue();
         }
     
-        // Get value of die 2
-        public int getDie2() {
-            return die2.getDieValue();
-        }
     }
