@@ -32,4 +32,9 @@ public class Board {
         fields[23] = new PropertyField("Beach", 23, "You landed on the beach", 5, "Blue");
 
     }
+
+    public Field getField(int location) {
+        return fields[location];
+    }
+
 }
