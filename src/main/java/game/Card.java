@@ -7,5 +7,4 @@ abstract class Card {
         this.description = description;
     }
 
-    abstract public void applyCard();
 }
