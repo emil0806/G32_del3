@@ -7,6 +7,6 @@ public class OutOfJailCard extends Card {
     }
 
     public void storeCard(Player player) {
-        player.setInJail(true);
+        player.setOutOfJailCard(true);
     }
 }
