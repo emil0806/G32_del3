@@ -6,4 +6,6 @@ abstract class Card {
     public Card(String description) {
         this.description = description;
     }
+
+    abstract public void applyCard();
 }
