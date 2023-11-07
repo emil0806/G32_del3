@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Game {
 
     private Player[] players;
-    private Board board;
-    private Cup cup;
+    private Board board = new Board();
+    private Cup cup = new Cup();
     private Output output;
     private String[] pieces = new String[] { "Boat", "Car", "Dog", "Cat" };
     private int numberOfPlayers;
@@ -15,7 +15,7 @@ public class Game {
     public void startGame() {
         output.displayRules();
 
-        output.enterNumOfPlayer();
+        output.enterNumberOfPlayers();
 
         while (numberOfPlayers < 2 || numberOfPlayers > 4) {
             scanner.nextLine();
@@ -26,8 +26,8 @@ public class Game {
         for (int i = 0; i < players.length; i++) {
             output.enterPlayerName(i + 1);
             String name = scanner.nextLine();
-            output.enterPlayerAge();
-            int age = output.nextInt();
+            output.enterPlayerAge(i + 1);
+            int age = scanner.nextInt();
             players[i] = new Player(name, age, pieces[i], numberOfPlayers);
         }
     }
