@@ -4,7 +4,7 @@ public class PropertyField extends Field {
 
     private int value;
     private String color;
-    private owner Player;
+    private Player owner;
     private boolean hasOwner;
 
     public PropertyField
@@ -18,7 +18,7 @@ public class PropertyField extends Field {
 
     public String getColor() {return color;}
 
-    public owner getPlayer() {return Player;}
+    public Player getOwner() {return this.owner;}
 
     public boolean getHasOwner() {return hasOwner;}
     //define setters
@@ -40,8 +40,13 @@ public class PropertyField extends Field {
         else{System.out.println("Error! Invalid balance or value");}
     }
     //if someone owns the field, run this code:
-        else{player.getAccount().withdrawMoney(this.value)
-            //todo finish this
+        else{
+            int colorFieldsOwned=0;
+            for (int i = 0; i < (this.owner.getFieldsOwned().length-1); i++){
+                //TODO FINISH THIS
+            }
+            player.getAccount().withdrawMoney(this.value)
+
     }
     }
 }
