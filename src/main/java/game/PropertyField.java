@@ -24,4 +24,24 @@ public class PropertyField extends Field {
     //define setters
     public void setOwner(Player player) {this.owner = player;}
     public void setHasOwner(boolean bool) {this.hasOwner = bool;}
+
+    @Override
+    public void landedOnField(Player player) {
+        //if no one owns the field, run this:
+    if (!this.hasOwner){
+        //if the player can afford the field, run this:
+        if (player.getAccount().getBalance() >= this.value){
+            this.owner=player;
+            player.addFieldToOwned(this);
+        }
+        //If player cannot afford the piece, set loss state
+        if (player.getAccount().getBalance() < this.value) {player.setHasLost(true);}
+        //throws an error if balance and/or value cannot be evaluated
+        else{System.out.println("Error! Invalid balance or value");}
+    }
+    //if someone owns the field, run this code:
+        else{player.getAccount().withdrawMoney(this.value)
+            //todo finish this
+    }
+    }
 }

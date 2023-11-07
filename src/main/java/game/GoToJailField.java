@@ -7,7 +7,7 @@ public class GoToJailField extends JailField{
         this.jailLocation = jailLocation;}
 
 
-  @override  public void landedOnField(Player player){moveToJail(player);}
+  @Override  public void landedOnField(Player player){moveToJail(player);}
     private void moveToJail(Player player){
         //TODO test me
         player.getPiece().setLocation(jailLocation);

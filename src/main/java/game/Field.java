@@ -18,9 +18,8 @@ abstract class Field {
     public String getDescription() {return this.description;}
     public int getLocation() {return this.location; }
 
-    public void landedOnField(Player player){
-        //Abstract method empty.
-    }
+    public abstract void landedOnField(Player player);       //Abstract method empty.
+
 
 
 }
