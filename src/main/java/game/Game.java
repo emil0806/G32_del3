@@ -28,7 +28,7 @@ public class Game {
             String name = scanner.nextLine();
             output.enterPlayerAge();
             int age = output.nextInt();
-            players[i] = new Player(name, age, pieces[i]);
+            players[i] = new Player(name, age, pieces[i], numberOfPlayers);
         }
     }
 
