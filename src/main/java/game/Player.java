@@ -10,11 +10,11 @@ public class Player {
     private boolean moveByTypeCard;
     private Field[] fieldsOwned;
 
-    public Player(String name, int age) {
+    public Player(String name, int age, String piece) {
         this.name = name;
         this.age = age;
         this.account = new Account();
-        this.piece = new Piece();
+        this.piece = new Piece(piece);
         this.inJail = false;
         this.outOfJailCard = false;
         this.moveByTypeCard = false;
