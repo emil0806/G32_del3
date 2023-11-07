@@ -52,7 +52,39 @@ public class Game {
     }
 
     public void playerTurn(Player player, Cup cup) {
+        if (player.getInJail()) {
+            if (player.getOutOfJailCard()) {
+                player.setOutOfJailCard(false);
+            } else {
+                player.withdrawMoney(1);
+            }
+        }
+        if (player.getMoveByTypeCard()) {
+            output.requestMoveToField();
+            int moveToField = scanner.nextInt();
+            Field nextLocation = board.getField(moveToField);
+            movePlayer(player, nextLocation);
+        } else {
+            cup.setRollSum();
+            output.displaySumOfDice(cup.getRollSum());
+            movePlayer(player, board.getField(cup.getRollSum()));
+        }
+    }
 
+    public void movePlayer(Player player, Field nextLocation) {
+
+        if (nextLocation.getLocation() == 0) {
+            output.displayFieldText(nextLocation);
+            nextLocation.landedOnField(player);
+        } else if (nextLocation.getLocation() < player.getPiece().getLocation().getLocation()) {
+            output.displayFieldText(board.getField(0));
+            player.depositMoney(2);
+            output.displayFieldText(nextLocation);
+            nextLocation.landedOnField(player);
+        } else {
+            output.displayFieldText(nextLocation);
+            nextLocation.landedOnField(player);
+        }
     }
 
     public Player[] sortPlayersByAge(Player[] playerList) {
