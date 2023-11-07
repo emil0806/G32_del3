@@ -29,6 +29,8 @@ public class Game {
             output.enterPlayerAge(i + 1);
             int age = scanner.nextInt();
             players[i] = new Player(name, age, pieces[i], numberOfPlayers);
+            output.showPieceType(pieces[i]);
+            players[i].getPiece().setLocation(board.getField(0));
         }
     }
 
