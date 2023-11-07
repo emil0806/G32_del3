@@ -8,6 +8,7 @@ public class Game {
     private Board board;
     private Cup cup;
     private Output output;
+    private String[] pieces = new String[] { "Boat", "Car", "Dog", "Cat" };
     private int numberOfPlayers;
     private Scanner scanner = new java.util.Scanner(System.in);
 
@@ -23,11 +24,11 @@ public class Game {
         players = new Player[numberOfPlayers];
 
         for (int i = 0; i < players.length; i++) {
-            output.enterPlayerName();
+            output.enterPlayerName(i + 1);
             String name = scanner.nextLine();
             output.enterPlayerAge();
             int age = output.nextInt();
-            players[i] = new Player(name, age);
+            players[i] = new Player(name, age, pieces[i]);
         }
     }
 
