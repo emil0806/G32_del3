@@ -9,6 +9,7 @@ public class Player {
     private boolean outOfJailCard;
     private boolean moveByTypeCard;
     private Field[] fieldsOwned;
+    private boolean hasLost;
 
     public Player(String name, int age, String piece, int numberOfPlayers) {
         this.name = name;
@@ -19,6 +20,7 @@ public class Player {
         this.outOfJailCard = false;
         this.moveByTypeCard = false;
         this.fieldsOwned = new Field[] {};
+        hasLost = false;
     }
 
     public String getPlayerName() {
@@ -81,5 +83,13 @@ public class Player {
         tempFieldsOwned[this.fieldsOwned.length] = field;
 
         this.fieldsOwned = tempFieldsOwned;
+    }
+
+    public void setHasLost(boolean hasLost) {
+        this.hasLost = hasLost;
+    }
+
+    public boolean getHasLost() {
+        return this.hasLost;
     }
 }
