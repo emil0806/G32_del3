@@ -1,13 +1,12 @@
 package game;
 
 public class Piece {
-    private String type;      // The type of the game piece 
-    private Field location;   // The current location of the game piece on the board.
+    private String type; // The type of the game piece
+    private Field location; // The current location of the game piece on the board.
 
     // Constructor to initialize the type and location when creating a Piece object.
-    public Piece(String type, Field location) {
+    public Piece(String type) {
         this.type = type;
-        this.location = location;
     }
 
     // Getter for retrieving the type of the game piece.
