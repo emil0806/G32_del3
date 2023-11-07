@@ -69,6 +69,10 @@ public class Game {
             output.displaySumOfDice(cup.getRollSum());
             movePlayer(player, board.getField(cup.getRollSum()));
         }
+
+        if (player.getHasLost()) {
+            this.hasLoser = true;
+        }
     }
 
     public void movePlayer(Player player, Field nextLocation) {
