@@ -24,7 +24,7 @@ public class Board {
         fields[15] = new ChanceField("Chance", 15, "You landed on the chance field");
         fields[16] = new PropertyField("Toy store", 16, "You landed on the toy store", 3, "Yellow");
         fields[17] = new PropertyField("Petshop", 17, "You landed on the petshop", 3, "Yellow");
-        fields[18] = new GoToJailField("Jail", 18, "You need to go to jail");
+        fields[18] = new GoToJailField("Jail", 18, "You need to go to jail", fields[6]);
         fields[19] = new PropertyField("Bowling alley", 19, "You landed on the bowling alley", 4, "Green");
         fields[20] = new PropertyField("ZOO", 20, "You landed on the ZOO", 4, "Green");
         fields[21] = new ChanceField("Chance", 21, "You landed on the chance field");
