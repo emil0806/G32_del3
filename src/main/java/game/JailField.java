@@ -1,5 +1,7 @@
 package game;
 
-public class JailField {
+public class JailField extends Field{
 
+    public JailField(String name, int location, String description)
+    {super(name, location, description);}
 }

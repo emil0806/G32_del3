@@ -14,8 +14,13 @@ abstract class Field {
     }
 
     //Define getters
-    public String getName() {return name;}
-    public String getDescription() {return description;}
-    public int getLocation() {return location; }
+    public String getName() {return this.name;}
+    public String getDescription() {return this.description;}
+    public int getLocation() {return this.location; }
+
+    public void landedOnField(Player player){
+        //Abstract method empty.
+    }
+
 
 }
