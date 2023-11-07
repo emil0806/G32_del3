@@ -45,6 +45,8 @@ public class Game {
 
             if (turnCount == players.length) {
                 turnCount = 0;
+            } else {
+                turnCount += 1;
             }
         }
     }
