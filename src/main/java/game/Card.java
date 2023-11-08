@@ -7,4 +7,6 @@ abstract class Card {
         this.description = description;
     }
 
+    public abstract void applyEffect();
+
 }
