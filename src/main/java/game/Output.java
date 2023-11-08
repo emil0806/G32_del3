@@ -2,22 +2,29 @@ package game;
 
 public class Output {
 
-    // Display game rules at the very beginning of the game
+    // Display game rules at the beginning of the game
     public void displayRules() {
-        System.out.println("Welcome to Monopoly Junior!");
-        System.out.println(
-                "Monopoly Junior is a two to four-player game where the objective is to bankrupt your opponents.");
-        System.out.println(
-                "The game ends when a player cannot pay their debts, and the player with the most money at that time wins.");
-        System.out.println("The board features 24 diverse fields with various effects on players.");
-        System.out.println();
-        System.out.println(
-                "The balance is given in Monopoly cash and varies depending on the number of players as follows:");
-        System.out.println("2 players: 20 Monopoly cash each.");
-        System.out.println("3 players: 18 Monopoly cash each.");
-        System.out.println("4 players: 16 Monopoly cash each.");
-        System.out.println();
-        System.out.println("Press ENTER to start the game.");
+        String[] rules = {
+            "Welcome to Monopoly Junior!",
+            "Monopoly Junior is a two to four-player game where the objective is to bankrupt your opponents.",
+            "The game ends when a player cannot pay their debts, and the player with the most money at that time wins.",
+            "The board features 24 diverse fields with various effects on players.",
+            "",
+            "The balance is given in Monopoly cash and varies depending on the number of players as follows:",
+            "2 players: 20 Monopoly cash each.",
+            "3 players: 18 Monopoly cash each.",
+            "4 players: 16 Monopoly cash each.",
+            "",
+            "Press ENTER to start the game."
+        };
+        printLines(rules); // Calls the helper method to print the game rules.
+    }
+
+    // Helper method to print an array of lines
+    private void printLines(String[] lines) {
+        for (String line : lines) {
+            System.out.println(line);
+        }
     }
 
     // Prompt for the number of players
@@ -50,9 +57,9 @@ public class Output {
         System.out.println("The winner is: " + playerName);
     }
 
-    // Display looser message
+    // Display loser message
     public void displayLooserMessage(String playerName) {
-        System.out.println(playerName + " has lost and the game has ended");
+        System.out.println(playerName + " has lost, and the game has ended");
     }
 
     // Designate a piece type to a player
@@ -70,12 +77,12 @@ public class Output {
         System.out.println(fieldText);
     }
 
-    // Display property status message if field has owner
+    // Display property status message if the field has an owner
     public void displayHasOwner(PropertyField field) {
         System.out.println(field.getName() + " has an owner, and you need to pay " + field.getValue());
     }
 
-    // Display property status message if field doesn't have owner
+    // Display property status message if the field doesn't have an owner
     public void displayHasNoOwner(PropertyField field) {
         System.out.println(field.getName() + " has no owner. You need to buy the field for " + field.getValue());
     }
