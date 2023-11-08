@@ -46,4 +46,34 @@ public class Output {
     public void displayWinner(String playerName) {
         System.out.println("The winner is: " + playerName);
     }
-}
+    
+    //Display looser message
+    public void displayLooserMessage(String playerName) {
+        System.out.println(playerName + " has lost and the game has ended");
+    }
+
+    //Designate a piece type to a player
+    public void showPieceType (String pieceType) {
+        System.out.println("You are the " + pieceType);
+    }
+
+    //Display balance
+    public void displayBalance(String playerName, int amount) {
+        System.out.println(playerName + " has " + amount);
+    }
+
+    // Display Field name
+    public void displayFieldText(String fieldText) {
+    System.out.println(fieldText);
+    }
+
+    // Display property status message if field has owner
+    public void displayHasOwner(Field field) {
+        System.out.println(field.getName() + " has an owner, and you need to pay " + field.getValue());
+        }
+
+    //Display property status message if field doesn't have owner
+    public void displayHasNoOwner(Field field) {
+        System.out.println(field.getName() + " has no owner. You need to buy the field for " + field.getValue());
+        }
+    }
