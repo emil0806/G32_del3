@@ -9,6 +9,10 @@ public class MoveByTypeCard extends Card {
         this.type = type;
     }
 
+    public void applyEffect(Player player) {
+        storeCard(player);
+    }
+
     public void storeCard(Player player) {
         player.setMoveByTypeCard(true);
     }
