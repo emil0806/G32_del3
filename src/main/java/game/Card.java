@@ -7,6 +7,6 @@ abstract class Card {
         this.description = description;
     }
 
-    public abstract void applyEffect();
+    public abstract void applyEffect(Player player);
 
 }
