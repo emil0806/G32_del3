@@ -34,6 +34,9 @@ public class Game {
         }
 
         players = sortPlayersByAge(players);
+
+        playGame(players);
+
     }
 
     public void playGame(Player[] players) {
@@ -49,6 +52,24 @@ public class Game {
                 turnCount += 1;
             }
         }
+
+        if (hasLoser) {
+            Player gameWinner;
+            if (players[0].getHasLost()) {
+                gameWinner = players[1];
+            } else {
+                gameWinner = players[0];
+            }
+            for (int i = 0; i < players.length; i++) {
+                if (!(players[i].getHasLost())) {
+                    if (players[i].getAccount().getBalance() < players[i + 1].getAccount().getBalance()) {
+                        gameWinner = players[i + 1];
+                    }
+                }
+            }
+            output.displayWinner(gameWinner.getPlayerName());
+        }
+
     }
 
     public void playerTurn(Player player, Cup cup) {
