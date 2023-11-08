@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Random;
+
 public class Deck {
 
     private Card[] cards = new Card[20];
@@ -26,6 +28,17 @@ public class Deck {
         cards[18] = new Card();
         cards[19] = new Card();
 
+    }
+
+    public void shuffleDeck() {
+        Random rand = new Random();
+
+        for (int i = 0; i < this.cards.length; i++) {
+            int randomIndexToSwap = rand.nextInt(this.cards.length);
+            Card temp = this.cards[randomIndexToSwap];
+            this.cards[randomIndexToSwap] = this.cards[i];
+            this.cards[i] = temp;
+        }
     }
 
 }
