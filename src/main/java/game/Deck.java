@@ -41,4 +41,22 @@ public class Deck {
         }
     }
 
+    public void drawCard(Player player) {
+        this.cards[0].applyEffect(player);
+        putCardInBottom();
+    }
+
+    public void putCardInBottom() {
+        Card[] tempCards = this.cards;
+
+        Card firstCard = this.cards[0];
+        for (int i = 0; i < this.cards.length - 1; i++) {
+            tempCards[i] = this.cards[i + 1];
+        }
+
+        tempCards[this.cards.length - 1] = firstCard;
+
+        this.cards = tempCards;
+    }
+
 }
