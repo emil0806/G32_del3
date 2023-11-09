@@ -4,28 +4,17 @@ public class Output {
 
     // Display game rules at the beginning of the game
     public void displayRules() {
-        String[] rules = {
-            "Welcome to Monopoly Junior!",
-            "Monopoly Junior is a two to four-player game where the objective is to bankrupt your opponents.",
-            "The game ends when a player cannot pay their debts, and the player with the most money at that time wins.",
-            "The board features 24 diverse fields with various effects on players.",
-            "",
-            "The balance is given in Monopoly cash and varies depending on the number of players as follows:",
-            "2 players: 20 Monopoly cash each.",
-            "3 players: 18 Monopoly cash each.",
-            "4 players: 16 Monopoly cash each.",
-            "",
-            "Press ENTER to start the game."
-        };
-        printLines(rules); // Calls the helper method to print the game rules.
-    }
-
-    // Helper method to print an array of lines
-    private void printLines(String[] lines) {
-        for (String line : lines) {
-            System.out.println(line);
+        System.out.println("Welcome to Monopoly Junior!\n" +
+        "Monopoly Junior is a two to four-player game where the objective is to bankrupt your opponents.\n" +
+        "The game ends when a player cannot pay their debts, and the player with the most money at that time wins.\n" +
+        "The board features 24 diverse fields with various effects on players.\n\n" +
+        "The balance is given in Monopoly cash and varies depending on the number of players as follows:\n" +
+        "2 players: 20 Monopoly cash each.\n" +
+        "3 players: 18 Monopoly cash each.\n" +
+        "4 players: 16 Monopoly cash each.\n" +
+        "In this game, you need to enter your age. The youngest player starts.\n\n" +
+        "Press ENTER to start the game.");
         }
-    }
 
     // Prompt for the number of players
     public void enterNumberOfPlayers() {
@@ -79,11 +68,21 @@ public class Output {
 
     // Display property status message if the field has an owner
     public void displayHasOwner(PropertyField field) {
-        System.out.println(field.getName() + " has an owner, and you need to pay " + field.getValue());
+        System.out.println(field.getName() + " has an owner, and you need to pay rent " + field.getValue());
     }
 
     // Display property status message if the field doesn't have an owner
     public void displayHasNoOwner(PropertyField field) {
         System.out.println(field.getName() + " has no owner. You need to buy the field for " + field.getValue());
+    }
+
+    //Display Player has two properties
+    public void displayHasTwoProperties(PropertyField field) {
+        System.out.println(field.getName() + " owns two of the same colors " + field.getValue() + " You need to pay double rent.");
+    }
+
+    //Display equal score
+    public void displayEqualScore (String playerName) {
+        System.out.println("The score is equal! Therefore, the winner will be identified based on the combined value of your properties and Monopoly Cash");
     }
 }
