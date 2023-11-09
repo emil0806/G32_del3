@@ -6,6 +6,10 @@ public class OutOfJailCard extends Card {
         super(description);
     }
 
+    public void applyEffect(Player player, Player[] players) {
+        storeCard(player);
+    }
+
     public void storeCard(Player player) {
         player.setOutOfJailCard(true);
     }
