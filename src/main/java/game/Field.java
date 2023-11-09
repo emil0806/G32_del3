@@ -24,9 +24,6 @@ abstract class Field {
         return this.location;
     }
 
-    public abstract void landedOnField(Player player, Board board); // Abstract method empty.
-
-    public abstract void landedOnField(Player player, Player[] players, Board board); // Abstract method with method
-                                                                                      // overloading.
+    public abstract void landedOnField(Player player, Player[] players, Board board); // Abstract method.
 
 }
