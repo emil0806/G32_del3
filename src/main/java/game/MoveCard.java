@@ -11,8 +11,9 @@ public class MoveCard extends Card {
 
     public void applyEffect(Player player, Player[] players, Board board) {
         int currentLocation = player.getPiece().getLocation().getLocation();
-        int nextLocation =  currentLocation + moves;
-        player.getPiece()
+        int nextLocation = currentLocation + moves;
+        Field nextField = board.getField(nextLocation);
+        player.getPiece().setLocation((nextField));
     }
 
 }
