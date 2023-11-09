@@ -7,6 +7,10 @@ abstract class Card {
         this.description = description;
     }
 
+    public String getDescription() {
+        return this.description;
+    }
+
     public abstract void applyEffect(Player player);
 
 }
