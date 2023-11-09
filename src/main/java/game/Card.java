@@ -11,6 +11,6 @@ abstract class Card {
         return this.description;
     }
 
-    public abstract void applyEffect(Player player, Player[] players);
+    public abstract void applyEffect(Player player, Player[] players, Board board);
 
 }

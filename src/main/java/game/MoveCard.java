@@ -9,4 +9,10 @@ public class MoveCard extends Card {
         this.moves = moves;
     }
 
+    public void applyEffect(Player player, Player[] players, Board board) {
+        int currentLocation = player.getPiece().getLocation().getLocation();
+        int nextLocation =  currentLocation + moves;
+        player.getPiece()
+    }
+
 }

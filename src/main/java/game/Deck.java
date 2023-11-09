@@ -41,8 +41,8 @@ public class Deck {
         }
     }
 
-    public void drawCard(Player player, Player[] players) {
-        this.cards[0].applyEffect(player, players);
+    public void drawCard(Player player, Player[] players, Board board) {
+        this.cards[0].applyEffect(player, players, board);
         putCardInBottom();
     }
 

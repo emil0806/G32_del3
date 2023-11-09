@@ -6,7 +6,7 @@ public class OutOfJailCard extends Card {
         super(description);
     }
 
-    public void applyEffect(Player player, Player[] players) {
+    public void applyEffect(Player player, Player[] players, Board board) {
         storeCard(player);
     }
 

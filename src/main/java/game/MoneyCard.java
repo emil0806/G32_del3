@@ -11,7 +11,7 @@ public class MoneyCard extends Card {
         this.fromBank = fromBank;
     }
 
-    public void applyEffect(Player player, Player[] players) {
+    public void applyEffect(Player player, Player[] players, Board board) {
         if (this.fromBank) {
             if (this.amount > 0) {
                 player.getAccount().deposit(this.amount);
