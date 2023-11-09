@@ -3,6 +3,8 @@ package game;
 public class Account {
     private int balance;
 
+//account constructor
+
     public Account(int numPlayers) {
         if (numPlayers == 2) {
             balance = 20;
@@ -23,22 +25,20 @@ public class Account {
     public int getBalance() {
         return balance;
     }
-//Condition left open. UNsure what it is supposed to be
+
     public boolean withdraw(int amount) {
-        if () {
+        if ((this.balance - amount) <0)  {
             
+            return false; 
+        } else {this.balance -= amount;
             return true; 
-        } else {
-            return false; 
         }
     }
-//Condition left open. UNsure what it is supposed to be
-    public boolean deposit(int amount) {
-        if () {
+
+    public void deposit(int amount) {
+        (this.balance) += amount; 
            
-            return true;
-        } else {
-            return false; 
+        
         }
-    }
+    
 }
