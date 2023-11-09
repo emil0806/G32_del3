@@ -4,7 +4,7 @@ public class MoveCard extends Card {
 
     private int moves;
 
-    public MoveCard(int moves, String description) {
+    public MoveCard(String description, int moves) {
         super(description);
         this.moves = moves;
     }
