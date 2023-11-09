@@ -9,8 +9,6 @@ public class ChanceField extends Field {
 
     @Override
     public void landedOnField(Player player, Player[] players, Board board) {
-        board.getDeck();
-
-        drawCard(player, players);
+        board.getDeck().drawCard(player, players);
     }
 }

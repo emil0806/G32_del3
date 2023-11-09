@@ -30,7 +30,7 @@ public class Deck {
 
     }
 
-    public Card[] getDeck() {
+    public Card[] getCards() {
         return this.cards;
     }
 
