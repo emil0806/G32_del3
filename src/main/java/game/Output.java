@@ -85,4 +85,10 @@ public class Output {
     public void displayEqualScore (String playerName) {
         System.out.println("The score is equal! Therefore, the winner will be identified based on the combined value of your properties and Monopoly Cash");
     }
-}
+
+    //Draw chancecard
+        public void drawChanceCard(Card chanceCard) {
+            System.out.println(chanceCard.getDescription());
+        }
+    }
+    
