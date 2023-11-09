@@ -13,13 +13,22 @@ abstract class Field {
         this.description = description;
     }
 
-    //Define getters
-    public String getName() {return this.name;}
-    public String getDescription() {return this.description;}
-    public int getLocation() {return this.location; }
+    // Define getters
+    public String getName() {
+        return this.name;
+    }
 
-    public abstract void landedOnField(Player player);       //Abstract method empty.
+    public String getDescription() {
+        return this.description;
+    }
 
+    public int getLocation() {
+        return this.location;
+    }
 
+    public abstract void landedOnField(Player player, Board board); // Abstract method empty.
+
+    public abstract void landedOnField(Player player, Player[] players, Board board); // Abstract method with method
+                                                                                      // overloading.
 
 }
