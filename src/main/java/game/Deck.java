@@ -30,10 +30,6 @@ public class Deck {
 
     }
 
-    public Card[] getCards() {
-        return this.cards;
-    }
-
     public void shuffleDeck() {
         Random rand = new Random();
 
