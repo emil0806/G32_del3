@@ -1,15 +1,21 @@
 package game;
 
-public class GoToJailField extends JailField{
-    private final Field  jailLocation;
-    public GoToJailField(String name, int location, String description,Field jailLocation) {
+public class GoToJailField extends JailField {
+    private final Field jailLocation;
+
+    public GoToJailField(String name, int location, String description, Field jailLocation) {
         super(name, location, description);
-        this.jailLocation = jailLocation;}
+        this.jailLocation = jailLocation;
+    }
 
+    @Override
+    public void landedOnField(Player player, Player[] players, Board board) {
+        moveToJail(player);
+    }
 
-  @Override  public void landedOnField(Player player){moveToJail(player);}
-    private void moveToJail(Player player){
-        //TODO test me
+    private void moveToJail(Player player) {
+        // TODO test me
         player.getPiece().setLocation(jailLocation);
-        player.setInJail(true);}
+        player.setInJail(true);
+    }
 }

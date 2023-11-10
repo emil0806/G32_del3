@@ -37,4 +37,8 @@ public class Board {
         return fields[location];
     }
 
+    public Deck getDeck() {
+        return this.deck;
+    }
+
 }
