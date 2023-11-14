@@ -7,7 +7,7 @@ public class Game {
     private Player[] players;
     private Board board = new Board();
     private Cup cup = new Cup();
-    private Output output;
+    private Output output = new Output();
     private String[] pieces = new String[] { "Boat", "Car", "Dog", "Cat" };
     private int numberOfPlayers;
     private boolean hasLoser = false;
