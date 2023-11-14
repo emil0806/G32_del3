@@ -33,6 +33,10 @@ public class Output {
         System.out.print("Please enter the age of player " + playerNumber + ": ");
     }
 
+    public void playerTurn(String playerName) {
+        System.out.println(playerName + ", press ENTER to start your turn");
+    }
+
     // Prompts a player to roll the dice
     public void playerRollDice(String playerName) {
         System.out.println(playerName + ", press ENTER to roll the dice");
@@ -59,9 +63,10 @@ public class Output {
     }
 
     // Display balance
-public void displayScoreBoard(Player[] players) {
-    for(int i = 0; i < players.length; i++ ) {
-        System.out.println(players[i].getPlayerName() + " has: " + players[i].getAccount().getBalance() + "$ and owns " + players[i].getFieldsOwned());
+    public void displayScoreBoard(Player[] players) {
+        for (int i = 0; i < players.length; i++) {
+            System.out.println(players[i].getPlayerName() + " has: " + players[i].getAccount().getBalance()
+                    + "$ and owns " + players[i].getFieldsOwned());
         }
     }
 
@@ -101,12 +106,10 @@ public void displayScoreBoard(Player[] players) {
         System.out.println(chanceCard.getDescription());
     }
 
-    //Request move to field
-    public void displayMoveToField () {
-        System.out.println("You have a MoveByTypeCard. Please enter a location on the board you'd like to go between 0 - 23");
+    // Request move to field
+    public void displayMoveToField() {
+        System.out.println(
+                "You have a MoveByTypeCard. Please enter a location on the board you'd like to go between 0 - 23");
     }
 
 }
-
-
-   

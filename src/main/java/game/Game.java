@@ -26,7 +26,7 @@ public class Game {
 
         for (int i = 0; i < players.length; i++) {
             output.enterPlayerName(i + 1);
-            String name = scanner.nextLine();
+            String name = scanner.next();
             output.enterPlayerAge(i + 1);
             int age = scanner.nextInt();
             players[i] = new Player(name, age, pieces[i], numberOfPlayers);
@@ -45,6 +45,9 @@ public class Game {
         int turnCount = 0;
 
         while (!(hasLoser)) {
+            output.playerTurn(players[turnCount].getPlayerName());
+            scanner.nextLine();
+            scanner.nextLine();
             playerTurn(players[turnCount], cup);
 
             if (turnCount == players.length) {
