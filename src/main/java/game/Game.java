@@ -97,7 +97,13 @@ public class Game {
             } else {
                 cup.setRollSum();
                 output.displaySumOfDice(cup.getRollSum());
-                int moveToField = player.getPiece().getLocation().getLocation() + cup.getRollSum();
+                int moveToField;
+                if ((player.getPiece().getLocation().getLocation() + cup.getRollSum()) < 24) {
+                    moveToField = player.getPiece().getLocation().getLocation() + cup.getRollSum();
+                } else {
+                    moveToField = (player.getPiece().getLocation().getLocation() - 24) + cup.getRollSum();
+                }
+
                 Field nextLocation = board.getField(moveToField);
                 movePlayer(player, nextLocation);
             }
