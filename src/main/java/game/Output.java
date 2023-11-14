@@ -73,6 +73,7 @@ public class Output {
             for (int j = 0; j < players[i].getFieldsOwned().length; j++) {
                 System.out.print(players[i].getFieldsOwned()[j].getName() + " ");
             }
+            System.out.println("");
         }
     }
 
