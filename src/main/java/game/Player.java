@@ -38,7 +38,6 @@ public class Player {
     public void withdrawMoney(int amount) {
         if (!(this.account.withdraw(amount))) {
             setHasLost(true);
-            System.out.println("lost");
         }
     }
 

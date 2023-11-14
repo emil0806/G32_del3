@@ -19,10 +19,10 @@ public class MoneyCard extends Card {
                 player.withdrawMoney(Math.abs(this.amount));
             }
         } else {
-            player.withdrawMoney(this.amount * (players.length - 1));
+            player.depositMoney(this.amount * (players.length - 1));
             for (int i = 0; i < players.length; i++) {
                 if (!(players[i].getPlayerName().equals(player.getPlayerName()))) {
-                    players[i].depositMoney(this.amount);
+                    players[i].withdrawMoney(this.amount);
                 }
             }
         }

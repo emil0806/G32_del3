@@ -94,7 +94,6 @@ public class Game {
             }
         }
         if (player.getHasLost()) {
-            System.out.println("has loser");
             this.hasLoser = true;
         }
     }
