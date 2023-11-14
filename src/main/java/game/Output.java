@@ -65,8 +65,13 @@ public class Output {
     // Display balance
     public void displayScoreBoard(Player[] players) {
         for (int i = 0; i < players.length; i++) {
-            System.out.println(players[i].getPlayerName() + " has: " + players[i].getAccount().getBalance()
-                    + "$ and owns " + players[i].getFieldsOwned());
+            System.out.println(players[i].getPlayerName() + ":");
+            System.out.println("Balance: " + players[i].getAccount().getBalance());
+            System.out.println("Fields owned: ");
+
+            for (int j = 0; j < players[i].getFieldsOwned().length; j++) {
+                System.out.println(players[i].getFieldsOwned()[j].getName());
+            }
         }
     }
 

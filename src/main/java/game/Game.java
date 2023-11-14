@@ -45,6 +45,7 @@ public class Game {
         int turnCount = 0;
 
         while (!(hasLoser)) {
+            output.displayScoreBoard(players);
             output.playerTurn(players[turnCount].getPlayerName());
             scanner.nextLine();
             scanner.nextLine();
