@@ -102,17 +102,17 @@ public class Game {
         if (nextLocation.getLocation() == 0) {
             output.displayFieldText(nextLocation);
             player.getPiece().setLocation(nextLocation);
-            nextLocation.landedOnField(player);
+            nextLocation.landedOnField(player, players, board);
         } else if (nextLocation.getLocation() < player.getPiece().getLocation().getLocation()) {
             output.displayFieldText(board.getField(0));
             player.depositMoney(2);
             output.displayFieldText(nextLocation);
             player.getPiece().setLocation(nextLocation);
-            nextLocation.landedOnField(player);
+            nextLocation.landedOnField(player, players, board);
         } else {
             output.displayFieldText(nextLocation);
             player.getPiece().setLocation(nextLocation);
-            nextLocation.landedOnField(player);
+            nextLocation.landedOnField(player, players, board);
         }
     }
 
