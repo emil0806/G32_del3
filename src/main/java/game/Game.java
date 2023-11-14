@@ -15,6 +15,7 @@ public class Game {
 
     public void startGame() {
         output.displayRules();
+        scanner.nextLine();
 
         while (numberOfPlayers < 2 || numberOfPlayers > 4) {
             output.enterNumberOfPlayers();
