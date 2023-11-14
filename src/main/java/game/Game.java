@@ -55,6 +55,10 @@ public class Game {
         }
 
         if (hasLoser) {
+            Player[] finalScoreList = checkWinner(players);
+            output.displayGameEnd();
+
+            output.displayScoreboard(finalScoreList);
             Player gameWinner;
             if (players[0].getHasLost()) {
                 gameWinner = players[1];
@@ -137,7 +141,14 @@ public class Game {
         Player tempPlayer;
 
         for (int i = 0; i < playerList.length; i++) {
-            for (int j = i + 1; j < playerList.length; j++) {
+            if (playerList[i].getHasLost()) {
+                tempPlayer = playerList[playerList.length - 1];
+                playerList[playerList.length - 1] = playerList[i];
+                playerList[i] = tempPlayer;
+            }
+        }
+        for (int i = 0; i < playerList.length - 1; i++) {
+            for (int j = i + 1; j < playerList.length - 1; j++) {
                 if (playerList[i].getAccount().getBalance() == playerList[j].getAccount().getBalance()) {
 
                     PropertyField[] tempFields1 = playerList[i].getFieldsOwned();
@@ -146,12 +157,19 @@ public class Game {
                     int valuePlayer2 = 0;
 
                     for (int k = 0; k < tempFields1.length; k++) {
-                        tempFields1[k].getValue();
+                        valuePlayer1 += tempFields1[k].getValue();
                     }
-                    tempPlayer = playerList[i];
-                    playerList[i] = playerList[j];
-                    playerList[j] = tempPlayer;
-                } else if (players[i].getAccount().getBalance() > playerList[j].getAccount().getBalance()) {
+                    for (int h = 0; h < tempFields2.length; h++) {
+                        valuePlayer2 += tempFields2[h].getValue();
+                    }
+
+                    if (valuePlayer1 < valuePlayer2) {
+                        tempPlayer = playerList[i];
+                        playerList[i] = playerList[j];
+                        playerList[j] = tempPlayer;
+                    }
+
+                } else if (players[i].getAccount().getBalance() < playerList[j].getAccount().getBalance()) {
                     tempPlayer = playerList[i];
                     playerList[i] = playerList[j];
                     playerList[j] = tempPlayer;
