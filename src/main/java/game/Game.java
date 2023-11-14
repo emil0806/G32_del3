@@ -118,10 +118,16 @@ public class Game {
             output.displayFieldText(nextLocation);
             player.getPiece().setLocation(nextLocation);
             nextLocation.landedOnField(player, players, board);
+            if (nextLocation instanceof ChanceField) {
+                output.drawChanceCard(board.getDeck().getCards()[0]);
+            }
         } else {
             output.displayFieldText(nextLocation);
             player.getPiece().setLocation(nextLocation);
             nextLocation.landedOnField(player, players, board);
+            if (nextLocation instanceof ChanceField) {
+                output.drawChanceCard(board.getDeck().getCards()[0]);
+            }
         }
     }
 

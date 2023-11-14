@@ -63,4 +63,8 @@ public class Deck {
         this.cards = tempCards;
     }
 
+    public Card[] getCards() {
+        return this.cards;
+    }
+
 }
