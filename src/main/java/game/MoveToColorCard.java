@@ -24,13 +24,11 @@ public class MoveToColorCard extends Card {
             for (int i = 0; i < this.locations.length; i++) {
                 if (location == locations[i]) {
                     correctInput = true;
-                    break;
                 }
             }
         }
 
-        int nextLocation = location + player.getPiece().getLocation().getLocation();
-        Field nextField = board.getField(location + nextLocation);
+        Field nextField = board.getField(location);
         player.getPiece().setLocation(nextField);
         s.close();
     }

@@ -48,7 +48,6 @@ public class Game {
             output.displayScoreBoard(players);
             output.playerTurn(players[turnCount].getPlayerName());
             scanner.nextLine();
-            scanner.nextLine();
             playerTurn(players[turnCount], cup);
 
             if (turnCount == players.length - 1) {
@@ -123,17 +122,19 @@ public class Game {
             player.depositMoney(2);
             output.displayFieldText(nextLocation);
             player.getPiece().setLocation(nextLocation);
-            nextLocation.landedOnField(player, players, board);
             if (nextLocation instanceof ChanceField) {
                 output.drawChanceCard(board.getDeck().getCards()[0]);
             }
+            nextLocation.landedOnField(player, players, board);
+
         } else {
             output.displayFieldText(nextLocation);
             player.getPiece().setLocation(nextLocation);
-            nextLocation.landedOnField(player, players, board);
             if (nextLocation instanceof ChanceField) {
                 output.drawChanceCard(board.getDeck().getCards()[0]);
             }
+            nextLocation.landedOnField(player, players, board);
+
         }
     }
 

@@ -32,6 +32,7 @@ public class Deck {
         cards[18] = new MoveToColorCard("Move to a lightblue or red field, you choose.", new int[] { 4, 5, 13, 14 });
         cards[19] = new MoveToColorCard("Move to a brown or yellow field, you choose.", new int[] { 1, 2, 16, 17 });
 
+        shuffleDeck();
     }
 
     public void shuffleDeck() {
