@@ -103,6 +103,7 @@ public class Game {
 
         if (nextLocation.getLocation() == 0) {
             output.displayFieldText(nextLocation);
+            player.depositMoney(2);
             player.getPiece().setLocation(nextLocation);
             nextLocation.landedOnField(player, players, board);
         } else if (nextLocation.getLocation() < player.getPiece().getLocation().getLocation()) {

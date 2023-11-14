@@ -14,6 +14,7 @@ public class MoveCard extends Card {
         int nextLocation = currentLocation + moves;
         Field nextField = board.getField(nextLocation);
         player.getPiece().setLocation(nextField);
+        player.getPiece().getLocation().landedOnField(player, players, board);
     }
 
 }

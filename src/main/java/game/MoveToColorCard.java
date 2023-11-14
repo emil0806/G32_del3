@@ -13,6 +13,7 @@ public class MoveToColorCard extends Card {
 
     public void applyEffect(Player player, Player[] players, Board board) {
         moveToField(player, board);
+        player.getPiece().getLocation().landedOnField(player, players, board);
     }
 
     public void moveToField(Player player, Board board) {
