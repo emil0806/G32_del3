@@ -51,7 +51,7 @@ public class Game {
             scanner.nextLine();
             playerTurn(players[turnCount], cup);
 
-            if (turnCount == players.length) {
+            if (turnCount == players.length - 1) {
                 turnCount = 0;
             } else {
                 turnCount += 1;
