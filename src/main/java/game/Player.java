@@ -36,7 +36,9 @@ public class Player {
     }
 
     public void withdrawMoney(int amount) {
-        this.account.withdraw(amount);
+        if (!(this.account.withdraw(amount))) {
+            setHasLost(true);
+        }
     }
 
     public void depositMoney(int amount) {
