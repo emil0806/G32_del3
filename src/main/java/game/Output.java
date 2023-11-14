@@ -66,11 +66,12 @@ public class Output {
     public void displayScoreBoard(Player[] players) {
         for (int i = 0; i < players.length; i++) {
             System.out.println(players[i].getPlayerName() + ":");
+            System.out.println("Location: " + players[i].getPiece().getLocation().getLocation());
             System.out.println("Balance: " + players[i].getAccount().getBalance());
-            System.out.println("Fields owned: ");
+            System.out.print("Fields owned: ");
 
             for (int j = 0; j < players[i].getFieldsOwned().length; j++) {
-                System.out.println(players[i].getFieldsOwned()[j].getName());
+                System.out.print(players[i].getFieldsOwned()[j].getName() + " ");
             }
         }
     }

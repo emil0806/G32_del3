@@ -97,7 +97,9 @@ public class Game {
             } else {
                 cup.setRollSum();
                 output.displaySumOfDice(cup.getRollSum());
-                movePlayer(player, board.getField(cup.getRollSum()));
+                int moveToField = player.getPiece().getLocation().getLocation() + cup.getRollSum();
+                Field nextLocation = board.getField(moveToField);
+                movePlayer(player, nextLocation);
             }
         } else {
             this.hasLoser = true;
