@@ -59,12 +59,18 @@ public class Output {
     }
 
     // Display balance
+public void displayScoreBoard(Player[] players) {
+    for(int i = 0; i < players.length; i++ ) {
+        System.out.println(players[i].getPlayerName() + " has: " + players[i].getAccount().getBalance() + "$ and owns " + players[i].getFieldsOwned());
+        }
+    }
+
     public void displayBalance(String playerName, int amount) {
         System.out.println(playerName + " has " + amount);
     }
 
     // Display Field name
-    public void displayFieldText(String fieldText) {
+    public void displayFieldText(Field fieldText) {
         System.out.println(fieldText);
     }
 
@@ -94,4 +100,13 @@ public class Output {
     public void drawChanceCard(Card chanceCard) {
         System.out.println(chanceCard.getDescription());
     }
+
+    //Request move to field
+    public void displayMoveToField () {
+        System.out.println("You have a MoveByTypeCard. Please enter a location on the board you'd like to go between 0 - 23");
+    }
+
 }
+
+
+   
