@@ -81,18 +81,18 @@ public class Game {
                 player.withdrawMoney(1);
             }
         }
-        if (player.getMoveByTypeCard()) {
-            output.requestMoveToField();
-            int moveToField = scanner.nextInt();
-            Field nextLocation = board.getField(moveToField);
-            movePlayer(player, nextLocation);
+        if (!(player.getHasLost())) {
+            if (player.getMoveByTypeCard()) {
+                output.requestMoveToField();
+                int moveToField = scanner.nextInt();
+                Field nextLocation = board.getField(moveToField);
+                movePlayer(player, nextLocation);
+            } else {
+                cup.setRollSum();
+                output.displaySumOfDice(cup.getRollSum());
+                movePlayer(player, board.getField(cup.getRollSum()));
+            }
         } else {
-            cup.setRollSum();
-            output.displaySumOfDice(cup.getRollSum());
-            movePlayer(player, board.getField(cup.getRollSum()));
-        }
-
-        if (player.getHasLost()) {
             this.hasLoser = true;
         }
     }
