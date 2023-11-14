@@ -73,7 +73,7 @@ public class Player {
         this.moveByTypeCard = moveByTypeCard;
     }
 
-    public Field[] getFieldsOwned() {
+    public PropertyField[] getFieldsOwned() {
         return this.fieldsOwned;
     }
 
