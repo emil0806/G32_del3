@@ -4,7 +4,7 @@ public class MoveByTypeCard extends Card {
 
     private String type;
 
-    public MoveByTypeCard(String type, String description) {
+    public MoveByTypeCard(String description, String type) {
         super(description);
         this.type = type;
     }
