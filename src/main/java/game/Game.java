@@ -19,7 +19,7 @@ public class Game {
 
         while (numberOfPlayers < 2 || numberOfPlayers > 4) {
             output.enterNumberOfPlayers();
-            scanner.nextLine();
+            numberOfPlayers = scanner.nextInt();
         }
 
         players = new Player[numberOfPlayers];
