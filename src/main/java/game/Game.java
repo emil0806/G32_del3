@@ -61,20 +61,6 @@ public class Game {
             Player[] finalScoreList = checkWinner(players);
 
             output.displayScoreBoard(finalScoreList);
-            Player gameWinner;
-            if (players[0].getHasLost()) {
-                gameWinner = players[1];
-            } else {
-                gameWinner = players[0];
-            }
-            for (int i = 0; i < players.length; i++) {
-                if (!(players[i].getHasLost())) {
-                    if (players[i].getAccount().getBalance() < players[i + 1].getAccount().getBalance()) {
-                        gameWinner = players[i + 1];
-                    }
-                }
-            }
-            output.displayWinner(gameWinner.getPlayerName());
         }
 
     }
@@ -106,7 +92,9 @@ public class Game {
                 Field nextLocation = board.getField(moveToField);
                 movePlayer(player, nextLocation);
             }
-        } else {
+        }
+        if (player.getHasLost()) {
+            System.out.println("has loser");
             this.hasLoser = true;
         }
     }

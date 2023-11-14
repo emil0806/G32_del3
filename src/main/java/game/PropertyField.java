@@ -51,13 +51,7 @@ public class PropertyField extends Field {
                 player.addFieldToOwned(this);
                 player.withdrawMoney(this.value);
             }
-            // If player cannot afford the piece, set loss state
-            if (player.getAccount().getBalance() < this.value) {
-                player.setHasLost(true);
-            }
-        }
-        // if someone owns the field, run this code:
-        else {
+        } else if (!(this.owner.getPlayerName().equals(player.getPlayerName()))) {
             // calls pairOwned() to check if the owner has both fields
             if (!pairOwned()) {
                 // Subtracts this.value from the visitors account and pays the owner's account

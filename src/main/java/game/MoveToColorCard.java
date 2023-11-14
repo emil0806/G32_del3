@@ -30,6 +30,5 @@ public class MoveToColorCard extends Card {
 
         Field nextField = board.getField(location);
         player.getPiece().setLocation(nextField);
-        s.close();
     }
 }

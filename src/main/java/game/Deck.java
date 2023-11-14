@@ -15,7 +15,7 @@ public class Deck {
         cards[4] = new MoveCard("Move 1 forward", 1);
         cards[5] = new MoveByTypeCard(
                 "Give this card to the ship. \n The ship can move anywhere it wants in their next turn.", "ship");
-        cards[6] = new MoneyCard("You ate too much candy, pay 2$ to the bank", 2, true);
+        cards[6] = new MoneyCard("You ate too much candy, pay 2$ to the bank", -2, true);
         cards[7] = new MoveToColorCard("Move to an orange or green field, you choose.", new int[] { 10, 11, 19, 20 });
         cards[8] = new MoveToColorCard("Move to a lightblue field, you choose.", new int[] { 4, 5 });
         cards[9] = new OutOfJailCard("You can get out of jail for free. This card is stored for next time.");
