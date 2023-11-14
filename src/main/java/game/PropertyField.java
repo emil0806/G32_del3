@@ -53,10 +53,6 @@ public class PropertyField extends Field {
             if (player.getAccount().getBalance() < this.value) {
                 player.setHasLost(true);
             }
-            // throws an error if balance and/or value cannot be evaluated
-            else {
-                System.out.println("Error! Invalid balance or value");
-            }
         }
         // if someone owns the field, run this code:
         else {
