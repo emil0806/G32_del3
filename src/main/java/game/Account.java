@@ -3,7 +3,7 @@ package game;
 public class Account {
     private int balance;
 
-//account constructor
+    // account constructor
 
     public Account(int numPlayers) {
         if (numPlayers == 2) {
@@ -13,11 +13,10 @@ public class Account {
         } else if (numPlayers == 4) {
             balance = 16;
         } else {
-            balance = 20; 
+            balance = 20;
         }
     }
 
-   
     public void setBalance(int amount) {
         balance = amount;
     }
@@ -27,18 +26,16 @@ public class Account {
     }
 
     public boolean withdraw(int amount) {
-        if ((this.balance - amount) <0)  {
-            
-            return false; 
-        } else {this.balance -= amount;
-            return true; 
+        if ((this.balance - amount) < 0) {
+            return false;
+        } else {
+            this.balance -= amount;
+            return true;
         }
     }
 
     public void deposit(int amount) {
-        (this.balance) += amount; 
-           
-        
-        }
-    
+        (this.balance) += amount;
+    }
+
 }
