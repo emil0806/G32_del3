@@ -9,6 +9,7 @@ public class Output {
                 "The game ends when a player cannot pay their debts, and the player with the most money at that time wins.\n"
                 +
                 "The board features 24 diverse fields with various effects on players.\n\n" +
+                "There can be between 2 to 4 players. \n" +
                 "The balance is given in Monopoly cash and varies depending on the number of players as follows:\n" +
                 "2 players: 20 Monopoly cash each.\n" +
                 "3 players: 18 Monopoly cash each.\n" +
