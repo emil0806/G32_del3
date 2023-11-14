@@ -61,33 +61,30 @@ public class PropertyField extends Field {
             // calls pairOwned() to check if the owner has both fields
             if (!pairOwned()) {
                 // Subtracts this.value from the visitors account and pays the owner's account
-                player.getAccount().withdraw(this.value);
-                this.getOwner().getAccount().deposit(this.value);
+                player.withdrawMoney(this.value);
+                this.getOwner().depositMoney(this.value);
             }
             // If owner has a pair, payment becomes twice the value.
             if (pairOwned()) {
-                int payment = this.value * 2;
-                player.getAccount().withdraw(payment);
-                this.getOwner().getAccount().deposit(payment);
+                player.withdrawMoney(this.value * 2);
+                this.getOwner().depositMoney(this.value * 2);
             }
         }
 
     }
 
     private boolean pairOwned() {
-        int colorFieldsOwned = 0;
         // declares variable for readability
-        PropertyField[] owned = (PropertyField[]) this.owner.getFieldsOwned();
+        PropertyField[] owned = this.owner.getFieldsOwned();
         // if statement to prevent out of bounds exceptions
-        if (owned.length > 0) {
-            for (int i = 0; i < (owned.length - 1); i++) {
-                // counts how many fields of the same color are owned by the owner
-                if (this.getColor().equals(owned[i].getColor())) {
-                    colorFieldsOwned++;
+        for (int i = 0; i < owned.length; i++) {
+            // counts how many fields of the same color are owned by the owner
+            if (!(this.name.equals(owned[i].getName()))) {
+                if (this.color.equals(owned[i].getColor())) {
+                    return true;
                 }
             }
-            // returns true if player has a pair
-            return (colorFieldsOwned == 2);
+
         }
         return false;
 
