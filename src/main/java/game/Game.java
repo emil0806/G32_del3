@@ -56,9 +56,8 @@ public class Game {
 
         if (hasLoser) {
             Player[] finalScoreList = checkWinner(players);
-            output.displayGameEnd();
 
-            output.displayScoreboard(finalScoreList);
+            output.displayScoreBoard(finalScoreList);
             Player gameWinner;
             if (players[0].getHasLost()) {
                 gameWinner = players[1];
@@ -87,7 +86,7 @@ public class Game {
         }
         if (!(player.getHasLost())) {
             if (player.getMoveByTypeCard()) {
-                output.requestMoveToField();
+                output.displayMoveToField();
                 int moveToField = scanner.nextInt();
                 Field nextLocation = board.getField(moveToField);
                 movePlayer(player, nextLocation);
