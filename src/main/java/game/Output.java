@@ -25,12 +25,12 @@ public class Output {
 
     // Prompt for player names
     public void enterPlayerName(int playerNumber) {
-        System.out.println("Please enter the name of player " + playerNumber + ":");
+        System.out.print("Please enter the name of player " + playerNumber + ": ");
     }
 
     // Prompt for player age to determine who starts
     public void enterPlayerAge(int playerNumber) {
-        System.out.println("Please enter the age of player " + playerNumber + ":");
+        System.out.print("Please enter the age of player " + playerNumber + ": ");
     }
 
     // Prompts a player to roll the dice
