@@ -76,7 +76,7 @@ public class Output {
 
     // Display Field name
     public void displayFieldText(Field fieldText) {
-        System.out.println(fieldText);
+        System.out.println(fieldText.getDescription());
     }
 
     // Display property status message if the field has an owner
