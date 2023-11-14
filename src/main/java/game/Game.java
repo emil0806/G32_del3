@@ -122,7 +122,36 @@ public class Game {
 
         for (int i = 0; i < playerList.length; i++) {
             for (int j = i + 1; j < playerList.length; j++) {
-                if (players[i].getAge() > playerList[j].getAge()) {
+                if (playerList[i].getAge() > playerList[j].getAge()) {
+                    tempPlayer = playerList[i];
+                    playerList[i] = playerList[j];
+                    playerList[j] = tempPlayer;
+                }
+            }
+        }
+        return playerList;
+    }
+
+    public Player[] checkWinner(Player[] playerList) {
+
+        Player tempPlayer;
+
+        for (int i = 0; i < playerList.length; i++) {
+            for (int j = i + 1; j < playerList.length; j++) {
+                if (playerList[i].getAccount().getBalance() == playerList[j].getAccount().getBalance()) {
+
+                    PropertyField[] tempFields1 = playerList[i].getFieldsOwned();
+                    int valuePlayer1 = 0;
+                    PropertyField[] tempFields2 = playerList[j].getFieldsOwned();
+                    int valuePlayer2 = 0;
+
+                    for (int k = 0; k < tempFields1.length; k++) {
+                        tempFields1[k].getValue();
+                    }
+                    tempPlayer = playerList[i];
+                    playerList[i] = playerList[j];
+                    playerList[j] = tempPlayer;
+                } else if (players[i].getAccount().getBalance() > playerList[j].getAccount().getBalance()) {
                     tempPlayer = playerList[i];
                     playerList[i] = playerList[j];
                     playerList[j] = tempPlayer;

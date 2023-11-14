@@ -8,7 +8,7 @@ public class Player {
     private boolean inJail;
     private boolean outOfJailCard;
     private boolean moveByTypeCard;
-    private Field[] fieldsOwned;
+    private PropertyField[] fieldsOwned;
     private boolean hasLost;
 
     public Player(String name, int age, String piece, int numberOfPlayers) {
@@ -19,7 +19,7 @@ public class Player {
         this.inJail = false;
         this.outOfJailCard = false;
         this.moveByTypeCard = false;
-        this.fieldsOwned = new Field[] {};
+        this.fieldsOwned = new PropertyField[] {};
         hasLost = false;
     }
 
@@ -77,8 +77,8 @@ public class Player {
         return this.fieldsOwned;
     }
 
-    public void addFieldToOwned(Field field) {
-        Field[] tempFieldsOwned = new Field[this.fieldsOwned.length + 1];
+    public void addFieldToOwned(PropertyField field) {
+        PropertyField[] tempFieldsOwned = new PropertyField[this.fieldsOwned.length + 1];
         for (int i = 0; i < this.fieldsOwned.length; i++) {
             tempFieldsOwned[i] = this.fieldsOwned[i];
         }
