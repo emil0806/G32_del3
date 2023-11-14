@@ -48,6 +48,7 @@ public class PropertyField extends Field {
             if (player.getAccount().getBalance() >= this.value) {
                 this.owner = player;
                 player.addFieldToOwned(this);
+                player.withdrawMoney(this.value);
             }
             // If player cannot afford the piece, set loss state
             if (player.getAccount().getBalance() < this.value) {
