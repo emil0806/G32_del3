@@ -14,7 +14,7 @@ public class Board {
         fields[5] = new PropertyField("Icecream store", 5, "You landed on the icecream store", 1, "Lightblue");
         fields[6] = new JailField("Visit Jail", 6, "You landed on the visit jail field");
         fields[7] = new PropertyField("Museum", 7, "You landed on the museum", 2, "Pink");
-        fields[8] = new PropertyField("Libary", 8, "You landed on the libery", 2, "Pink");
+        fields[8] = new PropertyField("Library", 8, "You landed on the library", 2, "Pink");
         fields[9] = new ChanceField("Chance", 9, "You landed on the chance field");
         fields[10] = new PropertyField("Skaterpark", 10, "You landed on the skaterpark", 2, "Orange");
         fields[11] = new PropertyField("Swimmingpool", 11, "You landed on the swimmingpool", 2, "Orange");
