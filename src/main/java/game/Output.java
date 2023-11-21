@@ -120,6 +120,6 @@ public class Output {
     }
 
     public void readyForGame() {
-        System.out.println("Are you ready to play? Press ENTER");
+        System.out.println("\n READY, SET, GOOOOO! \n");
     }
 }
