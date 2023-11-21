@@ -13,7 +13,7 @@ public class RegularField extends Field {
     public void checkLocation(Player player, Board board) {
         if (this.getLocation() < player.getPiece().getLocation().getLocation()) {
             player.depositMoney(2);
-            player.getPiece().setLocation(board.getField(this.getLocation()));
         }
+        player.getPiece().setLocation(board.getField(this.getLocation()));
     }
 }
