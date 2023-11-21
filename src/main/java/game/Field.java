@@ -26,4 +26,6 @@ abstract class Field {
 
     public abstract void landedOnField(Player player, Player[] players, Board board); // Abstract method.
 
+    public abstract void checkLocation(Player player, Board board);
+
 }

@@ -102,28 +102,19 @@ public class Game {
 
         if (nextLocation.getLocation() == 0) {
             output.displayFieldText(nextLocation);
-            player.depositMoney(2);
-            player.getPiece().setLocation(nextLocation);
-            nextLocation.landedOnField(player, players, board);
         } else if (nextLocation.getLocation() < player.getPiece().getLocation().getLocation()) {
             output.displayFieldText(board.getField(0));
-            player.depositMoney(2);
             output.displayFieldText(nextLocation);
-            player.getPiece().setLocation(nextLocation);
             if (nextLocation instanceof ChanceField) {
                 output.drawChanceCard(board.getDeck().getCards()[0]);
             }
-            nextLocation.landedOnField(player, players, board);
-
         } else {
             output.displayFieldText(nextLocation);
-            player.getPiece().setLocation(nextLocation);
             if (nextLocation instanceof ChanceField) {
                 output.drawChanceCard(board.getDeck().getCards()[0]);
             }
-            nextLocation.landedOnField(player, players, board);
-
         }
+        nextLocation.landedOnField(player, players, board);
     }
 
     public Player[] sortPlayersByAge(Player[] playerList) {
