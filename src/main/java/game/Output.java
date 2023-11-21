@@ -2,6 +2,8 @@ package game;
 
 public class Output {
 
+    OutputBoard outputBoard = new OutputBoard();
+
     // Display game rules at the beginning of the game
     public void displayRules() {
         System.out.println("Welcome to Monopoly Junior!\n" +
@@ -64,17 +66,8 @@ public class Output {
 
     // Display balance
     public void displayScoreBoard(Player[] players) {
-        for (int i = 0; i < players.length; i++) {
-            System.out.println(players[i].getPlayerName() + ":");
-            System.out.println("Location: " + players[i].getPiece().getLocation().getLocation());
-            System.out.println("Balance: " + players[i].getAccount().getBalance());
-            System.out.print("Fields owned: ");
 
-            for (int j = 0; j < players[i].getFieldsOwned().length; j++) {
-                System.out.print(players[i].getFieldsOwned()[j].getName() + " ");
-            }
-            System.out.println("");
-        }
+        outputBoard.showBoard(players);
     }
 
     public void displayBalance(String playerName, int amount) {
