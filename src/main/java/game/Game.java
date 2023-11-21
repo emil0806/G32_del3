@@ -8,7 +8,7 @@ public class Game {
     private Board board = new Board();
     private Cup cup = new Cup();
     private Output output = new Output();
-    private String[] pieces = new String[] { "Boat", "Car", "Dog", "Cat" };
+    private String[] pieces = new String[] { "ship", "car", "dog", "cat" };
     private int numberOfPlayers;
     private boolean hasLoser = false;
     private Scanner scanner = new java.util.Scanner(System.in);

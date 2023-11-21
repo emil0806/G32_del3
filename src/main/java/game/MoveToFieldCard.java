@@ -10,12 +10,11 @@ public class MoveToFieldCard extends Card {
     }
 
     public void applyEffect(Player player, Player[] players, Board board) {
-        moveToField(player, board);
-        player.getPiece().getLocation().landedOnField(player, players, board);
+        moveToField(player, players, board);
     }
 
-    public void moveToField(Player player, Board board) {
+    public void moveToField(Player player, Player[] players, Board board) {
         Field nextLocation = board.getField(this.location);
-        player.getPiece().setLocation(nextLocation);
+        nextLocation.landedOnField(player, players, board);
     }
 }
