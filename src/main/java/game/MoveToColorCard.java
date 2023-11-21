@@ -12,11 +12,10 @@ public class MoveToColorCard extends Card {
     }
 
     public void applyEffect(Player player, Player[] players, Board board) {
-        moveToField(player, board);
-        player.getPiece().getLocation().landedOnField(player, players, board);
+        moveToField(player, players, board);
     }
 
-    public void moveToField(Player player, Board board) {
+    public void moveToField(Player player, Player[] players, Board board) {
         Scanner s = new java.util.Scanner(System.in);
         boolean correctInput = false;
         int location = 0;
@@ -30,6 +29,6 @@ public class MoveToColorCard extends Card {
         }
 
         Field nextField = board.getField(location);
-        player.getPiece().setLocation(nextField);
+        nextField.landedOnField(player, players, board);
     }
 }
