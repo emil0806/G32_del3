@@ -119,4 +119,7 @@ public class Output {
                 "You have a MoveByTypeCard. Please enter a location on the board you'd like to go between 0 - 23");
     }
 
+    public void readyForGame() {
+        System.out.println("Are you ready to play? Press ENTER");
+    }
 }

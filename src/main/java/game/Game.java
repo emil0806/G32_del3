@@ -36,6 +36,9 @@ public class Game {
 
         players = sortPlayersByAge(players);
 
+        output.readyForGame();
+        scanner.nextLine();
+
         playGame(players);
 
     }
