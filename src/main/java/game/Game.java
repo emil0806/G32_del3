@@ -72,6 +72,7 @@ public class Game {
             } else {
                 player.withdrawMoney(1);
             }
+            player.setInJail(false);
         }
         if (!(player.getHasLost())) {
             if (player.getMoveByTypeCard()) {
