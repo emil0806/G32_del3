@@ -77,6 +77,45 @@ class OutputBoard {
 
     public void showBoard(Player[] players) {
 
+        String[] playerTypes = new String[players.length];
+
+        for (int i = 0; i < players.length; i++) {
+            switch (players[i].getPiece().getType()) {
+                case "ship":
+                    playerTypes[i] = "🚢";
+                    break;
+                case "car":
+                    playerTypes[i] = "🚗";
+                    break;
+                case "dog":
+                    playerTypes[i] = "🐶";
+                    break;
+                case "cat":
+                    playerTypes[i] = "🐱";
+                    break;
+            }
+        }
+
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                board[i][j][0] = "             ";
+            }
+        }
+
+        for (int i = 0; i < players.length; i++) {
+            board[0][0][0] = "             ";
+            int location = players[i].getPiece().getLocation().getLocation();
+            if (location >= 0 && location <= 6) {
+                this.board[0][location][0] = "      " + playerTypes[i] + "     ";
+            } else if (location > 6 && location <= 11) {
+                this.board[location - 6][6][0] = "      " + playerTypes[i] + "     ";
+            } else if (location >= 12 && location <= 18) {
+                this.board[6][18 % location][0] = "      " + playerTypes[i] + "     ";
+            } else if (location >= 19 && location <= 23) {
+                this.board[24 % location][0][0] = "      " + playerTypes[i] + "     ";
+            }
+        }
+
         String fullLine = "---------------------------------------------------------------------------------------------------";
         String underLine = "---------------                                                                     ---------------";
         for (int i = 0; i < 7; i++) {
@@ -105,7 +144,8 @@ class OutputBoard {
         System.out.println(fullLine);
 
         for (int i = 0; i < players.length; i++) {
-            System.out.print(players[i].getPlayerName() + ": " + players[i].getPiece().getLocation().getLocation()
+            System.out.print(players[i].getPlayerName() + ", " + playerTypes[i] + " : "
+                    + players[i].getPiece().getLocation().getLocation()
                     + " , " + players[i].getAccount().getBalance() + "$ , ");
             for (int j = 0; j < players[i].getFieldsOwned().length; j++) {
                 System.out.print(players[i].getFieldsOwned()[j].getName() + ", ");
