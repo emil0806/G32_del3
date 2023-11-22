@@ -52,6 +52,8 @@ public class PropertyField extends Field {
                 this.hasOwner = true;
                 player.addFieldToOwned(this);
                 player.withdrawMoney(this.value);
+            } else {
+                player.withdrawMoney(this.value);
             }
         } else if (!(this.owner.getPlayerName().equals(player.getPlayerName()))) {
             // calls pairOwned() to check if the owner has both fields
