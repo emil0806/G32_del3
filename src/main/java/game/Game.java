@@ -83,6 +83,7 @@ public class Game {
                 int moveToField = scanner.nextInt();
                 Field nextLocation = board.getField(moveToField);
                 movePlayer(player, nextLocation);
+                player.setMoveByTypeCard(false);
             } else {
                 cup.setRollSum();
                 output.displaySumOfDice(cup.getRollSum());
