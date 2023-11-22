@@ -1,7 +1,8 @@
 package game;
 
 class OutputBoard {
-    String[][][] board = new String[7][7][6];
+    private String[][][] board = new String[7][7][6];
+    private boolean gameHasLoser = false;
 
     public OutputBoard() {
         board[0][0][1] = "    START    ";
@@ -142,6 +143,16 @@ class OutputBoard {
             }
         }
         System.out.println(fullLine);
+
+        for (int i = 0; i < players.length; i++) {
+            if (players[i].getHasLost()) {
+                this.gameHasLoser = true;
+            }
+        }
+
+        if (gameHasLoser) {
+            System.out.println("The game is over. Here is the final scoreboard:");
+        }
 
         for (int i = 0; i < players.length; i++) {
             System.out.print(players[i].getPlayerName() + ", " + playerTypes[i] + " : "
