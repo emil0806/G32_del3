@@ -16,8 +16,23 @@ public class Output {
                 "2 players: 20 Monopoly cash each.\n" +
                 "3 players: 18 Monopoly cash each.\n" +
                 "4 players: 16 Monopoly cash each.\n" +
-                "In this game, you need to enter your age. The youngest player starts.\n\n" +
-                "Press ENTER to start the game.");
+                "In this game, you need to enter your age. The youngest player starts.\n\n");
+
+        System.out.println(
+                "Monopoly Junior er et spil for 2-4 spillere, hvor målet er at have flest penge, når spillet er slut\n"
+                        +
+                        "Spillet er slut, når en spiller ikke kan betale, og vinderen er den med flest penge.\n"
+                        +
+                        "Brættet har 24 felter, som hver har en effekt på en spiller.\n\n" +
+                        "Pengebeholdningen består af Monopoly penge\n" +
+                        "2 spillere: 20 Monopoly penge hver.\n" +
+
+                        "3 spillere: 18 Monopoly penge hver.\n" +
+                        "4 spillere: 16 Monopoly penge hver.\n" +
+                        "Den yngste spiller starter.\n\n");
+
+        System.out.println("Press ENTER to start the game. / Tryk ENTER for at starte spillet");
+
     }
 
     // Prompt for the number of players
